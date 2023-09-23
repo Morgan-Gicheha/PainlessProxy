@@ -1,6 +1,6 @@
 # PainlessProxy API Gateway Documentation
 
-Welcome to PainlessProxy! 🚀 Your gateway to effortless microservices management. Our core concept is simplicity, making it a breeze to connect and handle microservices, even those with callbacks. 😌 Forget about the complexities of managing callbacks in the gateway; PainlessProxy automatically routes them to the right microservice, giving you a painless experience. 🎯
+Welcome to PainlessProxy! 🚀 Your gateway to effortless microservices management. Our core concept is simplicity, making it a breeze to connect and handle microservices, even those with callbacks. Forget about the complexities of managing callbacks in the gateway; PainlessProxy automatically routes them to the right microservice, giving you a painless experience. 🎯
 
 This approach may seem simple, but it has the potential to solve a multitude of problems, especially for its creator. 🧙 Join us in simplifying microservices management with PainlessProxy! 🌟
 
@@ -37,8 +37,4 @@ The core concept behind our API Gateway is to streamline the process of connecti
 #### Response
 
 - The callback endpoint always returns a JSON response: `{"thank":"you"}`.
-
-## API Endpoint
-
-The API Gateway's callback endpoint is structured as follows:
 
