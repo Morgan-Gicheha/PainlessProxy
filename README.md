@@ -8,6 +8,8 @@ This approach may seem simple, but it has the potential to solve a multitude of 
 ## Basic Idea
 
 The core concept behind our API Gateway is to streamline the process of connecting and managing microservices. Here are the fundamental components of this concept:
+![Screenshot from 2023-09-27 21-13-23](https://github.com/Morgan-Gicheha/PainlessProxy/assets/51116440/36eaed58-1b18-4b08-9c6e-3c65b86e7034)
+
 
 ### Microservice Key Generation
 
