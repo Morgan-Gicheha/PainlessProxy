@@ -20,5 +20,8 @@ The core concept behind our API Gateway is to streamline the process of connecti
 
 #### Response
 
-- The callback endpoint always returns a JSON response: `{"thank":"you"}`.
+- The callback endpoint always returns a JSON response: `{"response":"OK"}`.
 
+## Loggingg
+How we will handle logs
+![Screenshot from 2023-09-27 20-55-14](https://github.com/Morgan-Gicheha/PainlessProxy/assets/51116440/09d672e7-f42e-4012-beac-ea89e28dcfdd)
