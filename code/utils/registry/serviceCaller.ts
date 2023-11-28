@@ -26,7 +26,7 @@ const callService = async (serviceData: ServiceIdentityDetails, data: IncomingPa
                 return error
             }
             return {
-                return {status:"091", message:error.message}
+                status:"091", message:error.message
             }
 
         });
