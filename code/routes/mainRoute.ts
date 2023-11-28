@@ -5,21 +5,23 @@ import { callService } from "../utils/registry/serviceCaller";
 
 const router: Router = express.Router();
 
-router.all("/", async (req: Request, res: Response) => {
-    const { details }: { details: ServiceIdentityDetails } = req.body;
-    let service = await getRegistryWithName(details)
-    if (!service) {
-        res.send({status:"091",message:"Invalid service name"})
-        return
-    }
+// router.all("/", async (req: Request, res: Response) => {
+//     const { details }: { details: ServiceIdentityDetails } = req.body;
+//     let service = await getRegistryWithName(details)
+//     if (!service) {
+//         res.send({status:"091",message:"Invalid service name"})
+//         return
+//     }
 
-     const serviceResponse = await callService(service,req.body,req.method)
+//      const serviceResponse = await callService(service,req.body,req.method)
 
-    res.send(serviceResponse);
-});
+//     res.send(serviceResponse);
+// });
 
-router.all("/me", (req,res)=>{
+router.all("*", (req,res)=>{
     console.log("I have been called....")
+    console.log(req.baseUrl)
+    console.log(req.url)
     res.send({me:"morgan"})
 })
 
