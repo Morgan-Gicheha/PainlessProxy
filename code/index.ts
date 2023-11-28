@@ -15,6 +15,12 @@ app.use("/initiate", mainRouter);
 app.use("/test", mainRouter);
 app.use("/callback", callbackRouter);
 app.use("/registry", registryRouter);
+app.all("*", (req,res)=>{
+    console.log("I have been called....")
+    console.log(req.baseUrl)
+    console.log(req.url)
+    res.send({me:"morgan"})
+})
 
 app.listen(config.Port, async () => {
     await connectToMongoDB();
