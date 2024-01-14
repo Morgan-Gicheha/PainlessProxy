@@ -1,5 +1,5 @@
 export interface ServiceIdentityDetails {
-    country: string;
+    country?: string;
     serviceName: string;
     type?: string;
     url?: string;

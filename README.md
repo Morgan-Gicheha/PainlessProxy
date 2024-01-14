@@ -27,3 +27,9 @@ The core concept behind our API Gateway is to streamline the process of connecti
 ## Loggingg
 How we will handle logs
 ![Screenshot from 2023-09-27 20-55-14](https://github.com/Morgan-Gicheha/PainlessProxy/assets/51116440/09d672e7-f42e-4012-beac-ea89e28dcfdd)
+
+
+
+#### internal Micro-service Response
+
+- All responses to microservices configured in the gatway should always return HTTP response  of `2xx`

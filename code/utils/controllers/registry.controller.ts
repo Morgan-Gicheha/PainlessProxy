@@ -23,6 +23,11 @@ const getRegistry = async () => {
 
 const getRegistryWithName = async (data: ServiceIdentityDetails): Promise<ServiceIdentityDetails | null> => {
     return RegistryModel.findOne({ serviceName: data.serviceName.trim() }) as unknown as ServiceIdentityDetails | null;
+
+    // as unknown as ServiceIdentityDetails | null;:
+    // This part involves type assertions. It is using as unknown to assert that the result is of type unknown, and then using as ServiceIdentityDetails | null to further assert the type as ServiceIdentityDetails or null.
+    // This is necessary because the result of findOne might be null, and TypeScript needs clarification on the type.
+    // Credits to chatGPT 😆😆😆
 };
 
 export { saveRegistry, getRegistry, getRegistryWithName };

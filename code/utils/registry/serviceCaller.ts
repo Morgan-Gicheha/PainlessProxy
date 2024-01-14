@@ -5,10 +5,6 @@ import { IncomingPaymentIntent, ServiceIdentityDetails } from "../interfaces/inc
 const callService = async (serviceData: ServiceIdentityDetails, data: IncomingPaymentIntent, method: string) => {
     const { url } = serviceData;
 
-    console.log(serviceData);
-    console.log(data);
-    console.log(method);
-
     const options = {
         method: method,
         url: url,
@@ -16,22 +12,18 @@ const callService = async (serviceData: ServiceIdentityDetails, data: IncomingPa
         data: data,
     };
 
+    console.log(options);
     return await axios
         .request(options)
         .then(function (response) {
-            return response.data
+            return response.data;
         })
-        .catch(function (error:Error) {
-            if (Object.keys(error).includes("status")) {
-                return error
-            }
+        .catch(function (error: Error) {
             return {
-                status:"091", message:error.message
-            }
-
+                status: "091",
+                message: `something when calling service happened:\n${error}`,
+            };
         });
-
-
 };
 
 export { callService };
