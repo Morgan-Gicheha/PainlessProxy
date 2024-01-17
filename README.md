@@ -1,3 +1,4 @@
+lls
 # PainlessProxy API Gateway Documentation
 
 Welcome to PainlessProxy! 🚀 Your gateway to effortless microservices management. Our core concept is simplicity, making it a breeze to connect and handle microservices, even those with callbacks. Forget about the complexities of managing callbacks in the gateway; PainlessProxy automatically routes them to the right microservice, giving you a painless experience. 🎯
@@ -33,3 +34,29 @@ How we will handle logs
 #### internal Micro-service Response
 
 - All responses to microservices configured in the gatway should always return HTTP response  of `2xx`
+
+
+#### For Asycnronous Tasks, we will use RabbitMQ.
+Message Queues to be used:
+* LOGS - for all loading purposes
+
+
+
+
+#### Fomart of API Activity logs to be maintained across all micro-services
+- all will emit in json (json-string)
+```json
+{
+  "service-name": "example-service",
+  "log-level": "info",
+  "timestamp": "2024-01-17T12:34:56.789Z",
+  "message": "This is a log message",
+  "correlation-id": "521d4298-76d4-4006",
+  "IP-address": "x.x.x.x",
+  "additional-details": {}
+}
+```
+
+#### Available service names for use in logging
+- gateway - this is the api gateway
+- 
