@@ -7,7 +7,7 @@ const callService = async (serviceData: ServiceIdentityDetails, data: IncomingPa
 
     const options = {
         method: method,
-        url: url,
+        url: url+"/callback",
         headers: { "Content-Type": "application/json" },
         data: data,
     };
