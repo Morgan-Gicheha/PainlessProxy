@@ -9,11 +9,6 @@ router.post("/", async (req: Request, res: Response) => {
     const { details }: { details: ServiceIdentityDetails } = req.body;
     const service = await getRegistryWithName(details);
 
-    if ("FormID" in req.body) {
-        const hrmsIndiaResponse = await hrmsIndia(req.body)
-        res.send(hrmsIndiaResponse);
-        return
-    }
 
 
     if (!service) {
