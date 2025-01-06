@@ -1,5 +1,6 @@
 import { RegistryModel } from "../../models/mongo.schema/Registry.schema";
 import { APIResponse, ServiceIdentityDetails } from "../interfaces/incomingData.interface.schema";
+import axios from "axios";
 
 const saveRegistry = async (data: ServiceIdentityDetails) => {
     let response: APIResponse = { status: "" };
@@ -30,4 +31,23 @@ const getRegistryWithName = async (data: ServiceIdentityDetails): Promise<Servic
     // Credits to chatGPT 😆😆😆
 };
 
-export { saveRegistry, getRegistry, getRegistryWithName };
+const hrmsIndia = async (data: any) => {
+    console.log("HRMS data=>/n",data);
+    try {
+        const response = await axios.post("https://hr.little.africa/api/leave/update", data, {
+            headers: {
+                "Content-Type": "application/json",
+            },
+        });
+
+        return {status: "000", message: "OK", response: response.data};
+    } catch (error) {
+        console.error("Error in hrmsIndia API call:", error);
+        return {
+            status: "091",
+            message: `something when calling service happened:\n${error}`,
+        };
+    }
+};
+
+export { saveRegistry, getRegistry, getRegistryWithName, hrmsIndia };
